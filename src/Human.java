@@ -15,13 +15,13 @@ public class Human {
         } else {
             this.yearOfBirth = currentYear - age;
         }
-        if (name.equals("")) {
+        if (name==null) {
             name = "Информация не указана";
         }
-        if (town.equals("")) {
+        if (town==null) {
             town = "Информация не указана";
         }
-        if (job.equals("")) {
+        if (job==null) {
             job = "Информация не указана";
         }
 
