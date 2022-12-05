@@ -15,13 +15,13 @@ public class Human {
         } else {
             this.yearOfBirth = currentYear - age;
         }
-        if (name==null) {
+        if (name == null) {
             name = "Информация не указана";
         }
-        if (town==null) {
+        if (town == null) {
             town = "Информация не указана";
         }
-        if (job==null) {
+        if (job == null) {
             job = "Информация не указана";
         }
 
@@ -40,4 +40,3 @@ public class Human {
                 "Я из города " + town + ". Я родилась в " + yearOfBirth + " году. Я работаю на должности " + job + ". Будем знакомы!");
     }
 }
-

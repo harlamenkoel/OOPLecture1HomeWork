@@ -9,6 +9,5 @@ public class Main {
         ann.welcomeMessageWomen();
         kate.welcomeMessageWomen();
         artem.welcomeMessage();
-
     }
 }
