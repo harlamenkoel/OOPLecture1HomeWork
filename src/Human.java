@@ -2,14 +2,16 @@ import java.util.Calendar;
 
 public class Human {
     String name;
-    int yearOfBirth;
-    String town;
+    private int yearOfBirth;
+    private String town;
     String job;
 
     Human(String name, int age, String town, String job) {
         Calendar calendar = Calendar.getInstance();
         int currentYear = calendar.get(Calendar.YEAR);
 
+
+        setYearOfBirth(age);
         if (age < 0) {
             yearOfBirth = 0;
         } else {
@@ -18,6 +20,7 @@ public class Human {
         if (name == null) {
             name = "Информация не указана";
         }
+        setTown(town);
         if (town == null) {
             town = "Информация не указана";
         }
@@ -28,6 +31,22 @@ public class Human {
         this.name = name;
         this.town = town;
         this.job = job;
+    }
+
+    public int getYearOfBirth() {
+        return yearOfBirth;
+    }
+
+    public void setYearOfBirth(int yearOfBirth) {
+        this.yearOfBirth = yearOfBirth;
+    }
+
+    public String getTown() {
+        return town;
+    }
+
+    public void setTown(String town) {
+        this.town = town;
     }
 
     void welcomeMessage() {
