@@ -13,24 +13,37 @@ public class Human {
 
         setYearOfBirth(age);
         if (age < 0) {
-            yearOfBirth = 0;
+            this.yearOfBirth = 0;
         } else {
             this.yearOfBirth = currentYear - age;
         }
+
         if (name == null) {
-            name = "Информация не указана";
-        }
-        setTown(town);
-        if (town == null) {
-            town = "Информация не указана";
-        }
-        if (job == null) {
-            job = "Информация не указана";
+            this.name = "Информация не указана";
+        } else {
+            this.name = name;
         }
 
-        this.name = name;
-        this.town = town;
-        this.job = job;
+        setTown(town);
+        if (town == null) {
+            this.town = "Информация не указана";
+        } else {
+            this.town = town;
+        }
+
+        if (job == null) {
+            this.job = "Информация не указана";
+        } else {
+            this.job = job;
+        }
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public String getJob() {
+        return job;
     }
 
     public int getYearOfBirth() {
@@ -49,13 +62,9 @@ public class Human {
         this.town = town;
     }
 
-    void welcomeMessage() {
-        System.out.println("Привет! Меня зовут " + name + ". " +
-                "Я из города " + town + ". Я родился в " + yearOfBirth + " году. Я работаю на должности " + job + ". Будем знакомы!");
-    }
-
-    void welcomeMessageWomen() {
-        System.out.println("Привет! Меня зовут " + name + ". " +
-                "Я из города " + town + ". Я родилась в " + yearOfBirth + " году. Я работаю на должности " + job + ". Будем знакомы!");
+    @Override
+    public String toString() {
+        return "Привет! Меня зовут " + getName() + ". " +
+                "Я из города " + getTown() + ". Год моего рождения " + getYearOfBirth() + ". Я работаю на должности " + getJob();
     }
 }

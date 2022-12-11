@@ -6,10 +6,10 @@ public class Main {
         Human artem = new Human("Артем", 27, null, "директор по развитию бизнеса");
         Human vladimir = new Human("Владимир",21,"Казань",null);
 
-        maxim.welcomeMessage();
-        ann.welcomeMessageWomen();
-        kate.welcomeMessageWomen();
-        artem.welcomeMessage();
-        vladimir.welcomeMessage();
+        System.out.println(maxim);
+        System.out.println(ann);
+        System.out.println(kate);
+        System.out.println(artem);
+        System.out.println(vladimir);
     }
 }
