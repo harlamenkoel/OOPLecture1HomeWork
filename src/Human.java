@@ -1,4 +1,4 @@
-import java.util.Calendar;
+import java.time.LocalDate;
 
 public class Human {
     String name;
@@ -7,16 +7,9 @@ public class Human {
     String job;
 
     Human(String name, int age, String town, String job) {
-        Calendar calendar = Calendar.getInstance();
-        int currentYear = calendar.get(Calendar.YEAR);
-
 
         setYearOfBirth(age);
-        if (age < 0) {
-            this.yearOfBirth = 0;
-        } else {
-            this.yearOfBirth = currentYear - age;
-        }
+
 
         if (name == null) {
             this.name = "Информация не указана";
@@ -25,11 +18,6 @@ public class Human {
         }
 
         setTown(town);
-        if (town == null) {
-            this.town = "Информация не указана";
-        } else {
-            this.town = town;
-        }
 
         if (job == null) {
             this.job = "Информация не указана";
@@ -50,16 +38,25 @@ public class Human {
         return yearOfBirth;
     }
 
-    public void setYearOfBirth(int yearOfBirth) {
-        this.yearOfBirth = yearOfBirth;
+    public void setYearOfBirth(int age) {
+        if (age < 0) {
+            this.yearOfBirth = 0;
+        } else {
+            this.yearOfBirth = LocalDate.now().getYear() - age;
+        }
     }
 
     public String getTown() {
         return town;
     }
 
+
     public void setTown(String town) {
-        this.town = town;
+        if (town == null) {
+            this.town = "Информация не указана";
+        } else {
+            this.town = town;
+        }
     }
 
     @Override
